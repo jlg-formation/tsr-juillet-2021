@@ -8,7 +8,6 @@ app.use((req, res, next) => {
   console.log('req.url', req.url);
   next();
 });
-
 app.use(express.static('.'));
 app.use(serveIndex('.', {icons: true}));
 
