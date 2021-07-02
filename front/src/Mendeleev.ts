@@ -26,6 +26,7 @@ export class Mendeleev {
       .text((d) => d.Symbol)
       .on("click", (mouseEvent, d) => {
         console.log("args: ", mouseEvent, d);
+        this.updateDetail(d);
       })
       .transition()
       .delay((d) => d.AtomicNumber * 10)
@@ -37,5 +38,19 @@ export class Mendeleev {
         const endTranslateState = `translate(${x}em, ${y}em)`;
         return d3.interpolateString(startTranslateState, endTranslateState);
       });
+  }
+
+  updateDetail(d: ChemicalElt): void {
+    // 1) recuperer le div.detail de l'html
+    // 2) placer les info dans les span.<class>
+
+    const divDetail = document.querySelector("div.detail") as Element;
+    console.log("divDetail: ", divDetail);
+    (divDetail.querySelector(".symbol") as Element).innerHTML = d.Symbol;
+    (divDetail.querySelector(".name") as Element).innerHTML = d.Element;
+    (divDetail.querySelector(".atomicNbr") as Element).innerHTML =
+      d.AtomicNumber + "";
+    (divDetail.querySelector(".atomicMass") as Element).innerHTML =
+      d.AtomicMass + "";
   }
 }
