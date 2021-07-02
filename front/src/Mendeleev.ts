@@ -13,6 +13,11 @@ export class Mendeleev {
     // plug csv into html
     const div = document.querySelector("div.tableau") as Element;
     console.log("div: ", div);
-    div.innerHTML = "<i>tutu</i>";
+    div.innerHTML = "";
+    const selection = d3.select(div).selectAll("div").data(csv);
+    selection
+      .enter()
+      .append("div")
+      .text((d) => (d as any).Symbol);
   }
 }
