@@ -10,11 +10,13 @@ export class Mendeleev {
     const csv = await d3.csv("./atomes.csv");
     console.log("csv: ", csv);
 
+    const data = csv.filter((d) => d.Group && d.Period);
+
     // plug csv into html
     const div = document.querySelector("div.tableau") as Element;
     console.log("div: ", div);
     div.innerHTML = "";
-    const selection = d3.select(div).selectAll("div").data(csv);
+    const selection = d3.select(div).selectAll("div").data(data);
     selection
       .enter()
       .append("div")
