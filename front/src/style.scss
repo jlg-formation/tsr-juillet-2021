@@ -1,5 +1,7 @@
 div.tableau {
+  position: relative;
   div {
+    position: absolute;
     border: 0.1em solid black;
     height: 3em;
     width: 2em;
