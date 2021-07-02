@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import { Logging } from "./decorators/Logging";
 import { ChemicalElt } from "./interfaces/ChemicalElt";
 
-@Logging
+@Logging({ prefix: "hello" })
 export class Mendeleev {
   constructor() {
     console.log("instantiate Mendeleev");
