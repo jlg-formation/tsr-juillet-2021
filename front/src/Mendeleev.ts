@@ -9,5 +9,9 @@ export class Mendeleev {
   async init() {
     const csv = await d3.csv("./atomes.csv");
     console.log("csv: ", csv);
+
+    // plug csv into html
+    const div = document.querySelector("div.tableau");
+    console.log("div: ", div);
   }
 }
