@@ -2,6 +2,9 @@
   "name": "back",
   "version": "0.0.1",
   "description": "",
+  "engines": {
+    "node": ">=12"
+  },
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
   "files": [
