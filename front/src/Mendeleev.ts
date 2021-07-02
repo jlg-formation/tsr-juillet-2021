@@ -24,13 +24,18 @@ export class Mendeleev {
       .enter()
       .append("div")
       .text((d) => d.Symbol)
-      .style("transform", (d) => {
-        const x = d.Group * (2 + 0.5);
-        const y = d.Period * (3 + 0.5);
-        return `translate(${x}em, ${y}em)`;
-      })
       .on("click", (mouseEvent, d) => {
         console.log("args: ", mouseEvent, d);
+      })
+      .transition()
+      .delay((d) => d.AtomicNumber * 10)
+      .styleTween("transform", (d) => {
+        const x = d.Group * (2 + 0.5);
+        const y = d.Period * (3 + 0.5);
+
+        const startTranslateState = "translate(0,0)";
+        const endTranslateState = `translate(${x}em, ${y}em)`;
+        return d3.interpolateString(startTranslateState, endTranslateState);
       });
   }
 }
