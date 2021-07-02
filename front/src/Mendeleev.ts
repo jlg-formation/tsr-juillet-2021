@@ -12,6 +12,10 @@ export class Mendeleev {
 
     // plug csv into html
     const div = document.querySelector("div.tableau");
+    if (!div) {
+      throw new Error("ah zut");
+    }
     console.log("div: ", div);
+    div.innerHTML = "<i>tutu</i>";
   }
 }
