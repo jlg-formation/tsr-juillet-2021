@@ -1,4 +1,5 @@
 body {
+  position: relative;
   font-family: sans-serif;
 }
 
@@ -14,6 +15,7 @@ div.tableau {
     border-radius: 0.5em;
     background: #ffffff;
     box-shadow: 8px 8px 10px #e8e8e8, -8px -8px 10px #ffffff;
+    border: 0.05em solid #eee;
 
     display: flex;
     align-items: center;
@@ -38,5 +40,38 @@ footer {
   a {
     text-decoration: inherit;
     color: #666;
+  }
+}
+
+div.detail {
+  position: absolute;
+  top: 7em;
+  left: 15em;
+  border: 0.1em solid #ddd;
+  box-shadow: 8px 8px 10px #e8e8e8, -8px -8px 10px #ffffff;
+  width: 10em;
+  height: 10em;
+  display: flex;
+  justify-content: space-between;
+
+  .symbol {
+    position: absolute;
+    font-size: 4em;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 120%);
+  }
+
+  .atomicNbr,
+  .atomicMass {
+    padding: 0.5em;
   }
 }
