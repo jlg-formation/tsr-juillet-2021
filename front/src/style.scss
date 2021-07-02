@@ -1,12 +1,35 @@
+body {
+  font-family: sans-serif;
+}
+
 div.tableau {
   position: relative;
-  background-color: #eee;
   height: 25em;
   width: 40em;
   div {
     position: absolute;
-    border: 0.1em solid black;
     height: 3em;
     width: 2em;
+
+    border-radius: 0.5em;
+    background: #ffffff;
+    box-shadow: 8px 8px 10px #e8e8e8, -8px -8px 10px #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #666;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 0.8em;
+  color: #aaa;
+  a {
+    text-decoration: inherit;
+    color: #666;
   }
 }

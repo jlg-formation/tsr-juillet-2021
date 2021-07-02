@@ -24,8 +24,8 @@ export class Mendeleev {
       .enter()
       .append("div")
       .style("transform", (d) => {
-        const x = d.Group * 2;
-        const y = d.Period * 3;
+        const x = d.Group * (2 + 0.5);
+        const y = d.Period * (3 + 0.5);
         return `translate(${x}em, ${y}em)`;
       })
       .text((d) => d.Symbol);
