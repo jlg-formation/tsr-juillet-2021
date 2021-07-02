@@ -39,6 +39,8 @@ export class Mendeleev {
         const endTranslateState = `translate(${x}em, ${y}em)`;
         return d3.interpolateString(startTranslateState, endTranslateState);
       });
+
+    this.updateDetail(data[20]);
   }
 
   updateDetail(d: ChemicalElt): void {
