@@ -29,6 +29,9 @@ div.tableau {
     &:active {
       background-color: #ddd;
     }
+    &.selected {
+      background-color: #ccc;
+    }
   }
 }
 

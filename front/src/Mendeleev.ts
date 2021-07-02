@@ -24,6 +24,7 @@ export class Mendeleev {
       .enter()
       .append("div")
       .text((d) => d.Symbol)
+      .attr("class", (d) => "na-" + d.AtomicNumber)
       .on("click", (mouseEvent, d) => {
         console.log("args: ", mouseEvent, d);
         this.updateDetail(d);
@@ -52,5 +53,11 @@ export class Mendeleev {
       d.AtomicNumber + "";
     (divDetail.querySelector(".atomicMass") as Element).innerHTML =
       d.AtomicMass + "";
+
+    const elementArray = document.querySelectorAll("div.tableau div");
+    elementArray.forEach((div) => div.classList.remove("selected"));
+
+    const selectedDiv = document.querySelector("div.na-" + d.AtomicNumber);
+    selectedDiv?.classList.add("selected");
   }
 }
