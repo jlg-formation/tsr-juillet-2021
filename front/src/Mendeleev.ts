@@ -23,11 +23,14 @@ export class Mendeleev {
     selection
       .enter()
       .append("div")
+      .text((d) => d.Symbol)
       .style("transform", (d) => {
         const x = d.Group * (2 + 0.5);
         const y = d.Period * (3 + 0.5);
         return `translate(${x}em, ${y}em)`;
       })
-      .text((d) => d.Symbol);
+      .on("click", (mouseEvent, d) => {
+        console.log("args: ", mouseEvent, d);
+      });
   }
 }
