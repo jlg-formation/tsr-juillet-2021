@@ -1,4 +1,4 @@
-import {interval, of} from 'rxjs';
+import {interval} from 'rxjs';
 import {map, startWith, take} from 'rxjs/operators';
 
 interval(1000)
